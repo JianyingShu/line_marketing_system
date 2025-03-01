@@ -72,4 +72,4 @@ def send_line_message(line_id, message):
 # ✅ 啟動 Flask 伺服器
 if __name__ == "__main__":
     print("✅ 啟動 Flask 伺服器，稍後將自動開啟網頁...")
-    app.run(host="0.0.0.0", port=9090, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)
