@@ -1,0 +1,82 @@
+nohup: ignoring input
+[2025-02-27 23:27:38 +0800] [28960] [INFO] Starting gunicorn 23.0.0
+[2025-02-27 23:27:38 +0800] [28960] [INFO] Listening at: http://0.0.0.0:8080 (28960)
+[2025-02-27 23:27:38 +0800] [28960] [INFO] Using worker: sync
+[2025-02-27 23:27:38 +0800] [28962] [INFO] Booting worker with pid: 28962
+[2025-02-27 23:27:38 +0800] [28963] [INFO] Booting worker with pid: 28963
+[2025-02-27 23:27:39 +0800] [28964] [INFO] Booting worker with pid: 28964
+[2025-02-27 23:27:39 +0800] [28970] [INFO] Booting worker with pid: 28970
+[2025-02-28 00:08:11 +0800] [28960] [INFO] Handling signal: hup
+[2025-02-28 00:08:11 +0800] [28960] [INFO] Hang up: Master
+[2025-02-28 00:08:11 +0800] [28960] [ERROR] Worker (pid:28963) was sent SIGHUP!
+[2025-02-28 00:08:11 +0800] [28960] [ERROR] Worker (pid:28962) was sent SIGHUP!
+[2025-02-28 00:08:11 +0800] [28960] [ERROR] Worker (pid:28970) was sent SIGHUP!
+[2025-02-28 00:08:11 +0800] [28960] [ERROR] Worker (pid:28964) was sent SIGHUP!
+[2025-02-28 00:08:11 +0800] [27922] [INFO] Booting worker with pid: 27922
+[2025-02-28 00:08:11 +0800] [27923] [INFO] Booting worker with pid: 27923
+[2025-02-28 00:08:11 +0800] [27924] [INFO] Booting worker with pid: 27924
+[2025-02-28 00:08:11 +0800] [27925] [INFO] Booting worker with pid: 27925
+[2025-02-28 21:25:45 +0800] [28960] [CRITICAL] WORKER TIMEOUT (pid:27925)
+[2025-02-28 21:25:45 +0800] [27925] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+SystemExit: 1
+[2025-02-28 21:25:45 +0800] [27925] [INFO] Worker exiting (pid: 27925)
+[2025-02-28 21:25:45 +0800] [22247] [INFO] Booting worker with pid: 22247
+[2025-02-28 21:25:46 +0800] [22247] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/volume1/web/flask_theme_test/app.py", line 18, in <module>
+    app.register_blueprint(auth_bp)  # ✅ 確保 Blueprint 正確註冊
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/flask/sansio/scaffold.py", line 47, in wrapper_func
+    return f(self, *args, **kwargs)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/flask/sansio/app.py", line 595, in register_blueprint
+    blueprint.register(self, options)
+  File "/volume1/web/flask_theme_test/venv/lib/python3.8/site-packages/flask/sansio/blueprints.py", line 310, in register
+    raise ValueError(
+ValueError: The name 'auth' is already registered for this blueprint. Use 'name=' to provide a unique name.
+[2025-02-28 21:25:46 +0800] [22247] [INFO] Worker exiting (pid: 22247)
+[2025-02-28 21:25:46 +0800] [28960] [ERROR] Worker (pid:22247) exited with code 3
+[2025-02-28 21:25:46 +0800] [27923] [INFO] Worker exiting (pid: 27923)
+[2025-02-28 21:25:46 +0800] [27922] [INFO] Worker exiting (pid: 27922)
+[2025-02-28 21:25:46 +0800] [27924] [INFO] Worker exiting (pid: 27924)
+[2025-02-28 21:25:46 +0800] [28960] [ERROR] Shutting down: Master
+[2025-02-28 21:25:46 +0800] [28960] [ERROR] Reason: Worker failed to boot.

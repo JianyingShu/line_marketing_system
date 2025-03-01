@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="IT 管理系統">
+    <meta name="author" content="">
+
+    <title>{% block title %}IT 管理系統{% endblock %}</title>
+
+    <!-- ✅ Bootstrap（CDN 版本，確保可用） -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- ✅ SB Admin 2 核心樣式 -->
+    <link href="{{ url_for('static', filename='css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+
+    <!-- ✅ 自訂 CSS -->
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+    
+</head>
+
+<body id="page-top">
+
+    <!-- 頁面容器 -->
+    <div id="wrapper">
+
+        <!-- 側邊欄 -->
+        {% include 'partials/sidebar.html' %}
+
+        <!-- 內容容器 -->
+        <div id="content-wrapper" class="d-flex flex-column min-vh-100">
+            
+            <!-- 主要內容容器 -->
+            <div id="content-wrapper" class="d-flex flex-column min-vh-100">
+                
+                <!-- ✅ 頂部工具列固定 -->
+                {% include 'partials/topbar.html' %}
+                
+                <!-- ✅ 主要內容區域 (可滾動) -->
+                <div id="content" class="flex-grow-1 overflow-auto">
+                    <div class="container-fluid">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+
+                <!-- ✅ 頁尾固定 -->
+                {% include 'partials/footer.html' %}
+
+        </div>
+
+    </div>
+
+    <!-- ✅ 返回頂部按鈕 -->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- ✅ JavaScript 放在 `body` 閉合標籤前，提升載入效能 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ✅ SB Admin 2 & 其他插件 -->
+    <script src="{{ url_for('static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/sb-admin-2.min.js') }}"></script>
+
+    <!-- ✅ 自訂 JavaScript -->
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+    {% block scripts %}{% endblock %}
+
+</body>
+
+</html>

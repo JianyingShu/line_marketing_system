@@ -1,0 +1,280 @@
+.sidebar {
+    background: linear-gradient(180deg, #4e73df 10%, #224abe 100%) !important;
+}
+
+/* ======== 狀態標籤（Badge）樣式 ======== */
+.badge,
+.status-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    min-width: 80px;
+}
+
+/* 成功（綠色） */
+.badge.bg-success,
+.status-success {
+    background-color: #28a745 !important;
+}
+
+/* 警告（黃色） */
+.badge.bg-warning,
+.status-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+/* 錯誤（紅色） */
+.badge.bg-danger,
+.status-danger {
+    background-color: #dc3545 !important;
+}
+
+/* ======== 表格樣式 ======== */
+.table th {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.1rem;
+}
+
+.table td {
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 10px;
+}
+
+/* 讓「維修動作」的欄位撐開，並使用 flex 來分配空間 */
+.table tbody tr td:nth-child(2) {
+    width: auto;
+}
+
+/* 讓「地區」和「維修狀況」的欄位寬度較小 */
+.table tbody tr td:nth-child(1),
+.table tbody tr td:nth-child(3) {
+    width: 15%;
+}
+
+/* 讓表格可以橫向滾動 */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* ======== 主要內容區塊樣式 ======== */
+.main-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    padding: 20px;
+    background-color: #f8f9fc;
+}
+
+/* ======== 卡片樣式（IT 設備維護） ======== */
+.card {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* 小型卡片 */
+.card.p-3 {
+    min-width: 150px;
+}
+
+.bg-login-image {
+    background-image: url("/static/img/login-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+}
+
+.sidebar.toggled {
+    width: 80px !important;  /* ✅ 設定縮小後的寬度 */
+}
+.sidebar.toggled .nav-item {
+    text-align: center;
+}
+.sidebar.toggled .nav-item .nav-link {
+    font-size: 14px;
+}
+.sidebar.toggled .nav-item .nav-link span {
+    display: none; /* ✅ 讓文字消失 */
+}
+
+.sidebar-toggle-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);  /* ✅ 淡淡的背景 */
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    margin: 10px auto;  /* ✅ 讓它置中 */
+}
+
+.sidebar-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.4); /* ✅ 滑鼠移過去變亮 */
+}
+
+/* ✅ 側邊欄縮小時，確保圖示置中 */
+.sidebar.toggled .nav-item {
+    text-align: center;  /* 文字與圖示置中 */
+    display: flex;
+    justify-content: center;
+}
+
+
+.sidebar.toggled .nav-item .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.sidebar.toggled .nav-item .nav-link i {
+    font-size: 1.8rem; /* ✅ 讓圖示變大 */
+}
+
+/* ✅ 隱藏文字 */
+.sidebar.toggled .nav-item .nav-link span {
+    display: none;
+}
+
+/* ✅ 縮小按鈕（變換箭頭方向） */
+#sidebarToggleBtn {
+    background-color: transparent;
+    border: none;
+    color: white; /* 讓箭頭變白色 */
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.toggled #sidebarToggleBtn {
+    transform: rotate(180deg);  /* 旋轉箭頭 */
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;  /* ✅ 讓內容區域至少填滿整個畫面 */
+}
+
+#content {
+    flex: 1; /* ✅ 內容區域會撐開，讓 footer 保持在底部 */
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f8f9fc; /* ✅ 可自行調整背景色 */
+    position: relative; /* ✅ 保持 footer 在內容區下方 */
+}
+.scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none; /* 預設隱藏 */
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: rgba(0, 123, 255, 0.6); /* 半透明藍色 */
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+.scroll-to-top:hover {
+    background: rgba(0, 123, 255, 1); /* 滑鼠懸停變亮 */
+}
+footer.sticky-footer {
+    height: 50px;  /* ✅ 設定固定高度 */
+    display: flex;
+    align-items: center;  /* ✅ 垂直置中 */
+    justify-content: center;  /* ✅ 水平置中 */
+    font-size: 14px;  /* ✅ 字體大小 */
+    padding: 0;
+    background: #ffffff;  /* ✅ 確保背景是白色 */
+}
+
+#sidebar {
+    position: fixed;
+    height: 100vh; /* ✅ 讓側邊欄填滿整個螢幕高度 */
+    overflow-y: auto; /* ✅ 讓側邊欄可以滾動 */
+    background: linear-gradient(180deg, #4e73df 10%, #224abe 100%); /* ✅ 這是 SB Admin 2 的藍色背景 */
+}
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ✅ 設定最小高度 100vh */
+}
+
+#content {
+    flex-grow: 1;  /* ✅ 讓主要內容區域填滿剩餘空間 */
+    overflow-y: auto; /* ✅ 允許內容滾動 */
+}
+.line-logo {
+    width: 30px; /* 確保 LINE 圖示大小一致 */
+    height: 30px;
+    margin-right: 10px; /* 調整與垂直線之間的距離 */
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 30px;
+    background-color: #ddd; /* 調整顏色 */
+    margin: 0 15px; /* 調整與兩側元素的間距 */
+}
+
+/* 麵包屑導航 - 移除背景顏色，確保文字上下置中 */
+.breadcrumb {
+    background-color: transparent !important;  /* 移除底色 */
+    padding: 0;  /* 移除內距，讓內容更緊湊 */
+    margin-bottom: 0; /* 避免佔據過多空間 */
+    align-items: center; /* 讓內容上下置中對齊 */
+}
+
+.breadcrumb-item {
+    font-size: 16px; /* 適當字體大小 */
+    color: #4e73df; /* 調整為 SB Admin 2 預設藍色 */
+}
+
+.breadcrumb-item a {
+    text-decoration: none; /* 移除超連結底線 */
+    color: #4e73df;
+}
+
+.breadcrumb-item.active {
+    color: #858796; /* 變淡，表示當前頁面 */
+}
+
+
+.topbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4e73df; /* SB Admin 2 預設藍色 */
+    margin-left: 15px;
+}

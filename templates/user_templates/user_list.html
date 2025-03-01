@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}使用者列表 - IT 管理系統{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">使用者列表</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>帳號</th>
+                <th>Email</th>
+                <th>角色</th>
+                <th>狀態</th>
+                <th>建立時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.status }}</td>
+                <td>{{ user.created_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

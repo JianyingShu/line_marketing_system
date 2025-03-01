@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="text-center">
+        <h1 class="display-1">404</h1>
+        <p class="lead">找不到該頁面</p>
+        <a href="{{ url_for('home') }}" class="btn btn-primary">回首頁</a>
+    </div>
+{% endblock %}

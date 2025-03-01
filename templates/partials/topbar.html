@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+
+   <!-- 🔹 固定顯示「LINE 行銷系統」 -->
+   <h1 class="h5 text-gray-800 m-0">LINE 行銷系統</h1>
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto d-flex align-items-center">
+
+        <li class="nav-item d-flex align-items-center">
+            <a class="nav-link" href="https://imgur.com/" target="_blank" title="前往 LINE 電子名片上傳圖庫">
+                <img src="{{ url_for('static', filename='img/imgur.png') }}" alt="imgur" class="imgur-logo">
+            </a>
+        </li>
+
+        <li class="nav-item d-flex align-items-center">
+            <a class="nav-link" href="https://picsee.io/" target="_blank" title="前往 短網址">
+                <img src="{{ url_for('static', filename='img/picsee.png') }}" alt="picsee" class="picsee-logo">
+            </a>
+        </li>
+        
+        <!-- LINE 官方帳號按鈕 -->
+        <li class="nav-item d-flex align-items-center">
+            <a class="nav-link" href="https://manager.line.biz/" target="_blank" title="前往 LINE 官方帳號後台">
+                <img src="{{ url_for('static', filename='img/line-logo.png') }}" alt="LINE" class="line-logo">
+            </a>
+        </li>
+
+        <!-- 垂直分隔線 -->
+        <li class="nav-item">
+            <div class="vertical-divider"></div>
+        </li>
+
+        {% if not session.get('user') %}
+    <!-- 登入按鈕 (未登入時顯示) -->
+    <li class="nav-item">
+        <a class="nav-link" href="/login">
+            <i class="fas fa-sign-in-alt mr-2"></i> 登入
+        </a>         
+    </li>
+    {% else %}
+        <!-- 使用者資訊 (登入後顯示) -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" 
+            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ session['user'] }}</span>
+                <img class="img-profile rounded-circle" src="{{ url_for('static', filename='img/user.png') }}">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" 
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> 個人資料
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('auth.logout') }}">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> 登出
+                </a>                
+            </div>
+        </li>
+    {% endif %}
+    </ul>
+
+</nav>

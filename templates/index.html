@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}首頁 - IT 管理系統{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">儀表板</h1>
+</div>
+
+<div class="container-fluid">
+    <!-- 顧客需約提示 (DataTables) -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">顧客需約提示</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="customerFollowUpTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>顧客名稱</th>
+                        <th>合約名稱</th>
+                        <th>到期日</th>
+                        <th>業務負責人</th>
+                        <th>跟進時間</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>陳小明</td>
+                        <td>三合一方案 (LINE 電子名片 + LINE 官方帳號 + 網頁一頁式名片)</td>
+                        <td>2025-04-10</td>
+                        <td>李業務</td>
+                        <td>2025-03-25</td>
+                    </tr>
+                    <tr>
+                        <td>王大華</td>
+                        <td>二合一方案 (LINE 電子名片 + LINE 官方帳號)</td>
+                        <td>2025-05-15</td>
+                        <td>張業務</td>
+                        <td>2025-04-30</td>
+                    </tr>
+                    <tr>
+                        <td>林美玲</td>
+                        <td>LINE 電子名片</td>
+                        <td>2025-06-01</td>
+                        <td>何業務</td>
+                        <td>2025-05-20</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+   <!-- LINE 行銷專案進度 (DataTables) -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">LINE 行銷專案進度</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="projectTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>專案名稱</th>
+                        <th>業務負責人</th>
+                        <th>設計負責人</th>
+                        <th>系統負責人</th>
+                        <th>目前進度</th>
+                        <th>進度 (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>王小明的 LINE 電子名片</td>
+                        <td>李業務</td>
+                        <td>陳設計</td>
+                        <td>張工程</td>
+                        <td>設計完成，待客戶確認</td>
+                        <td>80%</td>
+                    </tr>
+                    <tr>
+                        <td>張大同的 LINE 電子名片 + LINE 官方帳號</td>
+                        <td>王業務</td>
+                        <td>吳設計</td>
+                        <td>黃工程</td>
+                        <td>已開通帳號，準備上線</td>
+                        <td>60%</td>
+                    </tr>
+                    <tr>
+                        <td>陳美美的 LINE 電子名片 + LINE 官方帳號 + 網頁一頁式名片</td>
+                        <td>何業務</td>
+                        <td>林設計</td>
+                        <td>趙工程</td>
+                        <td>需求確認中</td>
+                        <td>30%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- DataTables 初始化 -->
+<script>
+    $(document).ready(function() {
+        $('#projectTable').DataTable({
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.11.5/i18n/Chinese-traditional.json"
+            }
+        });
+    });
+</script>
+
+
+
+{% endblock %}

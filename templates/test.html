@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}測試頁{% endblock %}
+
+{% block breadcrumb %}測試頁{% endblock %}  <!-- ✅ 這行非常重要 -->
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4">測試頁面</h1>
+    <p>這是一個測試頁面，來看看主要內容區域是否可以滾動。</p>
+    
+    {% for i in range(1, 101) %}
+        <p>這是第 {{ i }} 行測試內容...</p>
+    {% endfor %}
+</div>
+{% endblock %}

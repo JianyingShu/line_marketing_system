@@ -1,0 +1,67 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url_for('home') }}">
+        <div class="sidebar-brand-icon">
+            <img id="sidebarLogo" src="{{ url_for('static', filename='img/it-logo.png') }}" 
+                 alt="IT 管理系統 Logo" class="img-fluid">
+        </div>
+    </a>    
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Items -->
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-users"></i>  <!-- ✅ 顧客管理 -->
+            <span>顧客管理(未開發)</span>
+        </a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fab fa-line"></i>  <!-- ✅ LINE 電子名片 -->
+            <span>LINE 電子名片(未開發)</span>
+        </a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-list-alt"></i>  <!-- ✅ 主選單 -->
+            <span>LINE 官方帳號主選單(未開發)</span>
+        </a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-bell"></i>  <!-- ✅ 通知設定 -->
+            <span>LINE 通知訊息設定(未開發)</span>
+        </a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-file-contract"></i>  <!-- ✅ 合約設定 -->
+            <span>合約書設定(未開發)</span>
+        </a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="#">
+            <i class="fas fa-cogs"></i>  <!-- ✅ 系統設定 -->
+            <span>系統設定(未開發)</span>
+        </a>
+    </li>
+    
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0 sidebar-toggle-btn" id="sidebarToggleBtn">
+            <i class="fas fa-chevron-left"></i> <!-- ✅ 變成 `<` 方向箭頭 -->
+        </button>
+    </div>
+</ul>
